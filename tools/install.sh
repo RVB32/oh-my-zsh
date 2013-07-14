@@ -20,6 +20,29 @@ fi
 echo "\033[0;34mUsing the Oh My Zsh template file and adding it to ~/.zshrc\033[0m"
 cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
 
+
+echo "\033[0;34mLooking for an existing vim config...\033[0m"
+if [ -f ~/.vimrc ] || [ -h ~/.vimrc ]
+then
+  echo "\033[0;33mFound ~/.vimrc.\033[0m \033[0;32mBacking up to ~/.zshrc.pre-oh-my-zsh\033[0m";
+  mv ~/.vimrc ~/.vimrc.pre-oh-my-zsh;
+fi
+
+echo "\033[0;34mUsing the Oh My Zsh template file and adding it to ~/.vimrc\033[0m"
+cp ~/.oh-my-zsh/templates/vimrc.zsh-template ~/.vimrc
+
+
+echo "\033[0;34mLooking for an existing zsh config...\033[0m"
+if [ -f ~/.aliases ] || [ -h ~/.aliases ]
+then
+  echo "\033[0;33mFound ~/.aliases.\033[0m \033[0;32mBacking up to ~/.zshrc.pre-oh-my-zsh\033[0m";
+  mv ~/.aliases ~/.aliases.pre-oh-my-zsh;
+fi
+
+echo "\033[0;34mUsing the Oh My Zsh template file and adding it to ~/.aliases\033[0m"
+cp ~/.oh-my-zsh/templates/aliases.zsh-template ~/.aliases
+
+
 echo "\033[0;34mCopying your current PATH and adding it to the end of ~/.zshrc for you.\033[0m"
 echo "export PATH=\$PATH:$PATH" >> ~/.zshrc
 
