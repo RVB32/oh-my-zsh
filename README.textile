@@ -17,3 +17,7 @@ h4. via `curl`
 h4. via `wget`
 
 @wget --no-check-certificate https://github.com/RVB32/oh-my-zsh/raw/master/tools/install.sh -O - | sh@
+
+h2. Uninstalling
+
+If you want to uninstall it, just run @uninstall_oh_my_zsh@ from the command line and it’ll remove itself and revert you to bash (or your previous zsh config).
